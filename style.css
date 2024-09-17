@@ -4,6 +4,16 @@
   --color-primary: #006241;
   --color-secondary: #B99470;
   --color-extra: #d4e9e2;
+  --color-star: #006241;
+  --color-compassion: #9E2240;
+  --color-growth: #D9E89A;
+  --body-bg-color: #1a1c1d;
+  --color-advance: #D9E89A;
+  --text-color: #aaaebc;
+  --hr-color: #26292a;
+  --transition-duration: 0.3s;
+  --transition-delay: 0.2s;
+  --red: #e74c3c;
 }
 
 * {
@@ -27,6 +37,102 @@ ul {
   list-style: none;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 70px;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+}
+
+.menu .border {
+  position: absolute;
+  left: 0;
+  background: currentColor;
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+.menu .border-top,
+.menu .border-bottom {
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+}
+
+.menu .border-top,
+.menu .border-left,
+.menu .bottom-right {
+  top: 0;
+}
+
+.menu .border-bottom {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+.menu .border-top {
+  transform-origin: top left;
+}
+
+.menu .border-left {
+  transform-origin: bottom left;
+}
+
+.menu .border-right {
+  left: auto;
+  right: 0;
+  transform-origin: top-right;
+}
+
+.menu a:hover .border-top,
+.menu a:hover .border-bottom {
+  transform: scaleX(1);
+}
+
+.menu a:hover .border-left,
+.menu a:hover .border-right{
+  transform: scaleY(1);
+}
+
+.menu a:hover .border-right {
+  transition-delay: var(--transition-delay);
+}
+
+.menu a:hover .border-bottom {
+  transition-delay: calc(var(--transition-delay) * 2);
+}
+
+.menu a:hover .border-left {
+  transition-delay: calc(var(--transition-delay) * 3);
+}
+
+/* Animation */
+
+.menu[data-animation="diagonal"] .border-left {
+  transform-origin: top left;
+}
+
+.menu[data-animation="diagonal"] .border-right,
+.menu[data-animation="diagonal"] .border-bottom {
+  transform-origin: bottom right;
+}
+
+.menu[data-animation="diagonal"] a:hover [class^=border]{
+  transition-delay: 0s;
+}
+
+
 p {
   margin: 5px 0;
   line-height: 1.7;
@@ -40,6 +146,10 @@ section a {
   color: #fff;
 }
 
+starbucks-logo {
+  height: 50px;
+  width: 50px;
+}
 /* Navbar */
 .navbar {
   width: 100%;
@@ -118,8 +228,12 @@ section a {
 }
 
 .social img {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+
 }
 
 .social a {
@@ -127,11 +241,13 @@ section a {
   margin-right: 20px;
 }
 
+
 .divider {
-  width: 95%;
+  width: 90%;
   height: 1px;
   background-color: #ccc;
   margin: 40px auto;
+  line-height: 10cap;
 }
 
 /* Box */
@@ -197,8 +313,8 @@ section a {
 }
 
 .btn-light-outline {
-  border-color: #fff;
-  color: #fff;
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .btn-dark {
@@ -210,19 +326,41 @@ section a {
   background-color: #333;
 }
 
+
 /* Backgrounds */
 .bg-primary {
   background-color: var(--color-primary);
-  color: #fff;
+  color: #000;
 }
 .bg-secondary {
   background-color: var(--color-secondary);
-  color: #fff;
+  color: #000;
 }
 .bg-extra {
   background-color: var(--color-extra);
   color: #000;
 }
+
+.bg-star {
+  background-color: var(--color-star);
+  color: #fff;
+}
+
+.bg-compassion {
+  background-color: var(--color-compassion);
+  color: #ffffff;
+}
+
+.bg-growth {
+  background-color: var(--color-growth);
+  color: #000;
+}
+
+.bg-advance {
+  background-color: var(--color-advance);
+  color:#000;
+}
+
 .bg-dark {
   background-color: var(--color-dark);
   color: #000;
@@ -421,4 +559,9 @@ section a {
   .divider {
     max-width: 90%;
   }
+}
+
+.privacy {
+  line-height: 50px;
+  font-family:  SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
