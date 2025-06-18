@@ -1,4 +1,4 @@
-![ABHISIGN](https://github.com/user-attachments/assets/2894c0f9-a47d-4ce9-9dcf-dbbc8e6a541a)# ☕ Starbucks Clone – Frontend UI Project
+☕ Starbucks Clone – Frontend UI Project
 
 Welcome to the **Starbucks Clone** – a visually appealing and fully responsive frontend website inspired by the official Starbucks homepage. Built using **HTML, CSS, and JavaScript**, this project is designed to showcase modern UI design skills, responsiveness, and brand-inspired layout.
 
@@ -29,6 +29,7 @@ Welcome to the **Starbucks Clone** – a visually appealing and fully responsive
 
 ---
 
+![Uploading Screenshot 2025-06-19 014206.png…]()
 
 ---
 
